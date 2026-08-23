@@ -3,20 +3,80 @@
   "version": "2026.08.23.1",
   "reviewedAt": "2026-08-23T20:45:00Z",
   "dimensions": [
-    { "id": "credentials-secrets", "verdict": "pass", "note": "No credential input, storage, logging, provider, or network facility exists; tokenBudget is a token-count field, not a secret." },
-    { "id": "logging-quality", "verdict": "pass", "note": "Each method logs structured entry and completion/replay events without content." },
-    { "id": "error-handling", "verdict": "pass", "note": "Strict validation and all freshness, registry, budget, and replay checks occur before writes." },
-    { "id": "testing-completeness", "verdict": "pass", "note": "Synthetic success, malformed/stale/tampered, replay/idempotency, and no-authority paths are covered." },
-    { "id": "idempotency-resilience", "verdict": "pass", "note": "Exact replay returns no handles; conflicting replay throws before writing." },
-    { "id": "api-contracts", "verdict": "na", "note": "The extension makes no external API or network calls." },
-    { "id": "resource-management", "verdict": "pass", "note": "No files, processes, connections, providers, or external resources are opened." },
-    { "id": "published-surface-hygiene", "verdict": "pass", "note": "README and fixtures contain only example identifiers and repository://example references." },
-    { "id": "schema-strictness", "verdict": "pass", "note": "Every object input and resource boundary uses z.strictObject; output authority is a literal none." },
-    { "id": "lifetime-gc", "verdict": "pass", "note": "All immutable context resources explicitly use infinite lifetime and bounded version GC." },
-    { "id": "crud-completeness", "verdict": "na", "note": "This is an immutable compiler, not a remote-resource CRUD lifecycle." },
-    { "id": "preflight-checks", "verdict": "na", "note": "Methods only validate and persist local immutable records; they perform no external mutation." },
-    { "id": "instance-names", "verdict": "pass", "note": "Each method deterministically uses its artifact identifier and writes exactly one matching spec." },
-    { "id": "data-access", "verdict": "pass", "note": "Replay checks use context.readResource only." },
-    { "id": "version-upgrades", "verdict": "na", "note": "Initial standalone model version; no prior published resource contract exists." }
+    {
+      "id": "credentials-secrets",
+      "verdict": "pass",
+      "note": "No credential input, storage, logging, provider, or network facility exists; tokenBudget is a token-count field, not a secret."
+    },
+    {
+      "id": "logging-quality",
+      "verdict": "pass",
+      "note": "Each method logs structured entry and completion/replay events without content."
+    },
+    {
+      "id": "error-handling",
+      "verdict": "pass",
+      "note": "Strict validation and all freshness, registry, budget, and replay checks occur before writes."
+    },
+    {
+      "id": "testing-completeness",
+      "verdict": "pass",
+      "note": "Synthetic success, malformed/stale/tampered, replay/idempotency, and no-authority paths are covered."
+    },
+    {
+      "id": "idempotency-resilience",
+      "verdict": "pass",
+      "note": "Exact replay returns no handles; conflicting replay throws before writing."
+    },
+    {
+      "id": "api-contracts",
+      "verdict": "na",
+      "note": "The extension makes no external API or network calls."
+    },
+    {
+      "id": "resource-management",
+      "verdict": "pass",
+      "note": "No files, processes, connections, providers, or external resources are opened."
+    },
+    {
+      "id": "published-surface-hygiene",
+      "verdict": "pass",
+      "note": "README and fixtures contain only example identifiers and repository://example references."
+    },
+    {
+      "id": "schema-strictness",
+      "verdict": "pass",
+      "note": "Every object input and resource boundary uses z.strictObject; output authority is a literal none."
+    },
+    {
+      "id": "lifetime-gc",
+      "verdict": "pass",
+      "note": "All immutable context resources explicitly use infinite lifetime and bounded version GC."
+    },
+    {
+      "id": "crud-completeness",
+      "verdict": "na",
+      "note": "This is an immutable compiler, not a remote-resource CRUD lifecycle."
+    },
+    {
+      "id": "preflight-checks",
+      "verdict": "na",
+      "note": "Methods only validate and persist local immutable records; they perform no external mutation."
+    },
+    {
+      "id": "instance-names",
+      "verdict": "pass",
+      "note": "Each method deterministically uses its artifact identifier and writes exactly one matching spec."
+    },
+    {
+      "id": "data-access",
+      "verdict": "pass",
+      "note": "Replay checks use context.readResource only."
+    },
+    {
+      "id": "version-upgrades",
+      "verdict": "na",
+      "note": "Initial standalone model version; no prior published resource contract exists."
+    }
   ]
 }
