@@ -1,0 +1,22 @@
+{
+  "extension": "@mgreten/context-compiler",
+  "version": "2026.08.24.1",
+  "reviewedAt": "2026-08-24T14:00:00Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "pass", "note": "No credentials are accepted or emitted; analyzer tokenBudget warnings are false positives for numeric context-size budgets." },
+    { "id": "logging-quality", "verdict": "pass", "note": "Persistence paths provide structured completion/replay logs without payload content." },
+    { "id": "error-handling", "verdict": "pass", "note": "Validation and replay conflicts throw before writes; persistence failures propagate." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Retained consumers, generic paths, strict hybrids, persistence upgrades, replay, and failure paths are covered." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "Exact replay is a no-op and conflicting replay fails before persistence." },
+    { "id": "api-contracts", "verdict": "na", "note": "No provider, HTTP, or network API is used." },
+    { "id": "resource-management", "verdict": "na", "note": "No network connections, files, subprocesses, or temporary resources are opened." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "Published examples and fixtures use synthetic identifiers and example references." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "Public dual contracts are closed unions of complete strict retained and generic schemas; hybrids are rejected." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "All four retained resource specs declare infinite lifetime and bounded retained versions." },
+    { "id": "crud-completeness", "verdict": "na", "note": "This is an immutable deterministic compiler, not a remote CRUD lifecycle model." },
+    { "id": "preflight-checks", "verdict": "na", "note": "Methods only validate and persist local immutable artifacts; no external mutation is possible." },
+    { "id": "instance-names", "verdict": "pass", "note": "Each method writes one schema-compatible artifact under its explicit contract identity." },
+    { "id": "data-access", "verdict": "pass", "note": "Replay uses readResource; there is no direct repository access." },
+    { "id": "version-upgrades", "verdict": "pass", "note": "The 2026.08.24.1 upgrade validates and returns retained or generic records verbatim without vocabulary translation." }
+  ]
+}
